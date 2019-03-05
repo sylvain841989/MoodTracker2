@@ -3,4 +3,9 @@
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="history_7_jours">Il y a une semaine</string>
+    <string name="comment">Commentaire</string>
+    <string name="cancel">Annuler</string>
+    <string name="ok">Valider</string>
+
+
 </resources>

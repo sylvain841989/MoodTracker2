@@ -5,6 +5,9 @@
     <dimen name="size_smiley_height">300dp</dimen>
     <dimen name="size_icon_height">70dp</dimen>
     <dimen name="size_icon_width">70dp</dimen>
+    <dimen name="size_comment_history_width">30dp</dimen>
+    <dimen name="size_comment_history_height">30dp</dimen>
+
 
 
 </resources>
