@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">MoodTracker 2</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="history_7_jours">Il y a une semaine</string>
+</resources>
