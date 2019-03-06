@@ -12,6 +12,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Save.preferences = getSharedPreferences("PREF",MODE_PRIVATE);
+        Save.loadHistory(this);
+
+        //if new date
+        Save.addMood();
 
 
         this.configureViewPager();

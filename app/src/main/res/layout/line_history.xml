@@ -2,11 +2,18 @@
 
 
 <RelativeLayout
-    android:id="@+id/line_history_relative_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@color/colorPrimaryDark">
+    android:background="@android:color/darker_gray">
+
+    <RelativeLayout
+        android:id="@+id/line_history_relative_layout"
+
+        android:layout_width="0dp"
+        android:layout_height="match_parent">
+
+
 
         <TextView
             android:id="@+id/line_history_text_view"
@@ -14,6 +21,7 @@
             android:layout_height="wrap_content"
             android:text="text"
             android:layout_margin="5dp"
+            android:textColor="@android:color/black"
             />
         <ImageView
             android:id="@+id/line_history_image_view"
@@ -23,6 +31,6 @@
             android:layout_alignParentRight="true"
             android:src="@drawable/ic_comment_black_48px"
             android:layout_margin="20dp"/>
-
+    </RelativeLayout>
     </RelativeLayout>
 
