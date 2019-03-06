@@ -5,6 +5,8 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import java.util.Calendar;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -14,8 +16,16 @@ public class MainActivity extends AppCompatActivity {
         Save.preferences = getSharedPreferences("PREF",MODE_PRIVATE);
         Save.loadHistory(this);
 
+        //date
+        Calendar calendar = Calendar.getInstance();
+        int dateOfTheDay = calendar.get(Calendar.DAY_OF_YEAR);
         //if new date
-        Save.addMood();
+        if(dateOfTheDay != Save.daySaved(MainActivity.this))
+        {
+            Save.addMood();
+            Save.saveDay(dateOfTheDay);
+
+        }
 
 
         this.configureViewPager();

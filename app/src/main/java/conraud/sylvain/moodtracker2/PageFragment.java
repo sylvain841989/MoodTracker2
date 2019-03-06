@@ -50,7 +50,7 @@ public class PageFragment extends Fragment {
         ImageView imageViewSmiley = result.findViewById(R.id.fragment_page_image_view_smiley);
         ImageView imageViewAddComment = result.findViewById(R.id.fragment_page_image_view_addComment);
         ImageView imageViewHistory = result.findViewById(R.id.fragment_page_image_view_history);
-        int position = getArguments().getInt(KEY_POSITION);
+        ImageView imageViewPieChart = result.findViewById(R.id.fragment_page_image_view_pie_chart);
         int color = getArguments().getInt(KEY_COLOR);
         int smiley = getArguments().getInt(KEY_SMILEY);
 
@@ -88,6 +88,14 @@ public class PageFragment extends Fragment {
                 });
                 builder.create().show();
 
+            }
+        });
+
+        imageViewPieChart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(),PieChartActivity.class);
+                startActivity(intent);
             }
         });
 

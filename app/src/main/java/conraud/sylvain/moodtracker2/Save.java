@@ -14,6 +14,13 @@ public abstract class Save extends AppCompatActivity {
     static String mCurrentComment;
     static int mCurrentMood;
 
+    static void saveDay(int date){
+        preferences.edit().putInt("date",date).apply();
+    }
+    static int daySaved( Context context){
+        return context.getSharedPreferences("PREF", MODE_PRIVATE).getInt("date",0);
+    }
+
     static void savePosition (int position){
 
        preferences.edit().putInt(KEY_SAVE_POSITION,position).apply();

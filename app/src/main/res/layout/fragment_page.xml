@@ -32,5 +32,15 @@
         android:src="@drawable/ic_history_black"
         android:clickable="true"
         android:focusable="true"/>
+    <ImageView
+        android:id="@+id/fragment_page_image_view_pie_chart"
+        android:layout_width="@dimen/size_icon_width"
+        android:layout_height="@dimen/size_icon_height"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="30dp"
+        android:src="@drawable/pie_chart"
+        android:clickable="true"
+        android:focusable="true"/>
 
 </RelativeLayout>

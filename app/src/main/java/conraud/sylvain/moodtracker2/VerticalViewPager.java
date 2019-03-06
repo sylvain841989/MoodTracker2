@@ -82,5 +82,6 @@ public class VerticalViewPager extends ViewPager {
     protected void onPageScrolled(int position, float offset, int offsetPixels) {
         super.onPageScrolled(position, offset, offsetPixels);
         Save.savePosition(position);
+        Audio.playSound(position,getContext());
     }
 }

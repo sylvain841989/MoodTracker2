@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<lecho.lib.hellocharts.view.PieChartView
+    android:id="@+id/id_activity_statistic_chartPie"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#A2B6B4">
+
+
+</lecho.lib.hellocharts.view.PieChartView>
