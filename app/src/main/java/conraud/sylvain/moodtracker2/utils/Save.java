@@ -1,33 +1,34 @@
-package conraud.sylvain.moodtracker2;
+package conraud.sylvain.moodtracker2.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 
+import conraud.sylvain.moodtracker2.Data.Mood;
+
 public abstract class Save extends AppCompatActivity {
 
     static String KEY_SAVE_POSITION = "keySavePosition";
     static String KEY_SAVE_COMMENT = "keySaveComment";
-    static Mood moodArray[] = new Mood[7];
+    public static Mood moodArray[] = new Mood[7];
+    public static SharedPreferences preferences;
+    public static String mCurrentComment;
+    public static int mCurrentMood;
 
-    static SharedPreferences preferences;
-    static String mCurrentComment;
-    static int mCurrentMood;
-
-    static void saveDay(int date){
+    public static void saveDay(int date){
         preferences.edit().putInt("date",date).apply();
     }
-    static int daySaved( Context context){
+    public static int daySaved( Context context){
         return context.getSharedPreferences("PREF", MODE_PRIVATE).getInt("date",0);
     }
 
-    static void savePosition (int position){
+    public static void savePosition (int position){
 
        preferences.edit().putInt(KEY_SAVE_POSITION,position).apply();
        mCurrentMood = position;
     }
 
-    static int getPosition(Context context){
+    public static int getPosition(Context context){
         int result;
 
         result =context.getSharedPreferences("PREF",MODE_PRIVATE).getInt(KEY_SAVE_POSITION,3);
@@ -35,22 +36,20 @@ public abstract class Save extends AppCompatActivity {
         return result;
     }
 
-    static void saveComment(String comment)
+    public static void saveComment(String comment)
     {
         preferences.edit().putString(KEY_SAVE_COMMENT,comment).apply();
         mCurrentComment = comment;
     }
 
-    static void loadHistory(Context context){
+    public static void loadHistory(Context context){
         for(int i = 0 ; i<moodArray.length ; i++){
 
             String comment = context.getSharedPreferences("PREF", MODE_PRIVATE).getString("commentHistory"+i,null);
             int mood = context.getSharedPreferences("PREF",MODE_PRIVATE).getInt("moodHistory"+i,3);
             moodArray[i]= new Mood(comment,mood);
         }
-
     }
-
     static void saveHistory(){
         for (int i = 0; i<moodArray.length ; i++){
             preferences.edit().putString("commentHistory"+i, moodArray[i].comment).apply();
@@ -58,8 +57,7 @@ public abstract class Save extends AppCompatActivity {
 
         }
     }
-
-    static void addMood(){
+    public static void addMood(){
         moodArray[0] = null;
         for (int i = 0 ; i<moodArray.length -1 ; i++){
             moodArray[i] = moodArray[i+1];
@@ -69,8 +67,5 @@ public abstract class Save extends AppCompatActivity {
         mCurrentComment = null;
         saveHistory();
         preferences.edit().putInt(KEY_SAVE_POSITION,3).apply();
-
     }
-
-
 }

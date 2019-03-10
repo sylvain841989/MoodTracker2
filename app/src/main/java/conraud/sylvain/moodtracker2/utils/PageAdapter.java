@@ -1,17 +1,17 @@
-package conraud.sylvain.moodtracker2;
+package conraud.sylvain.moodtracker2.utils;
 
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.util.Log;
+
+import conraud.sylvain.moodtracker2.UI.PageFragment;
+import conraud.sylvain.moodtracker2.R;
 
 public class PageAdapter extends FragmentPagerAdapter {
     private int[] colors;
     int[] smileys = {R.drawable.smiley_sad ,R.drawable.smiley_disappointed,R.drawable.smiley_normal,R.drawable.smiley_happy,R.drawable.smiley_super_happy};
 
-    PageAdapter(FragmentManager fm, int[] colors) {
+    public PageAdapter(FragmentManager fm, int[] colors) {
         super(fm);
         this.colors = colors;
     }

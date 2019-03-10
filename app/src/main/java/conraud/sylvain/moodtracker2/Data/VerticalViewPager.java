@@ -1,10 +1,13 @@
-package conraud.sylvain.moodtracker2;
+package conraud.sylvain.moodtracker2.Data;
 
 import android.content.Context;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+
+import conraud.sylvain.moodtracker2.utils.Audio;
+import conraud.sylvain.moodtracker2.utils.Save;
 
 public class VerticalViewPager extends ViewPager {
 

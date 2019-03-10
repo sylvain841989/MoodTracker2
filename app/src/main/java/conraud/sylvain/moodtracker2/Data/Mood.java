@@ -1,4 +1,4 @@
-package conraud.sylvain.moodtracker2;
+package conraud.sylvain.moodtracker2.Data;
 
 public class Mood {
     public Mood(String comment, int mood) {
@@ -6,7 +6,7 @@ public class Mood {
         this.mood = mood;
     }
 
-    String comment;
-    int mood = 3;
+    public String comment;
+    public int mood = 3;
 }
 

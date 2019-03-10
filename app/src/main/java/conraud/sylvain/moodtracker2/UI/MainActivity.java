@@ -1,4 +1,4 @@
-package conraud.sylvain.moodtracker2;
+package conraud.sylvain.moodtracker2.UI;
 
 
 import android.support.v4.view.ViewPager;
@@ -6,6 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import java.util.Calendar;
+
+import conraud.sylvain.moodtracker2.utils.PageAdapter;
+import conraud.sylvain.moodtracker2.R;
+import conraud.sylvain.moodtracker2.utils.Save;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,23 +28,13 @@ public class MainActivity extends AppCompatActivity {
         {
             Save.addMood();
             Save.saveDay(dateOfTheDay);
-
         }
-
-
         this.configureViewPager();
-
     }
-
     void configureViewPager(){
 
         ViewPager viewPager = findViewById(R.id.activity_main_vertical_view_pager);
         viewPager.setAdapter(new PageAdapter(getSupportFragmentManager(), getResources().getIntArray(R.array.colorsArray)));
         viewPager.setCurrentItem(Save.getPosition(this));
-
     }
-
-
-
-
 }

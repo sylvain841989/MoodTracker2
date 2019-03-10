@@ -1,4 +1,4 @@
-package conraud.sylvain.moodtracker2;
+package conraud.sylvain.moodtracker2.UI;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -11,8 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+
+import conraud.sylvain.moodtracker2.R;
+import conraud.sylvain.moodtracker2.utils.Save;
 
 
 public class PageFragment extends Fragment {
@@ -49,17 +51,14 @@ public class PageFragment extends Fragment {
         int smiley = getArguments().getInt(KEY_SMILEY);
         relativeLayout.setBackgroundColor(color);
         imageViewSmiley.setImageResource(smiley);
-
         imageViewHistory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openActivityHistory();
             }});
-
         imageViewAddComment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 openDialogComment();
             }});
 
@@ -68,7 +67,6 @@ public class PageFragment extends Fragment {
             public void onClick(View v) {
                 openActivityPieChart();
             }});
-
         imageViewSendSms.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -95,7 +93,6 @@ public class PageFragment extends Fragment {
         builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-
             }
         });
         builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
@@ -106,15 +103,12 @@ public class PageFragment extends Fragment {
         });
         builder.create().show();
     }
-
     void openActivityPieChart(){
-        Intent intent = new Intent(getContext(),PieChartActivity.class);
+        Intent intent = new Intent(getContext(), PieChartActivity.class);
         startActivity(intent);
     }
-
     void openDialogSMS(){
        DialogSMS dialogSMS = new DialogSMS();
        dialogSMS.show(getActivity().getSupportFragmentManager(),"dialogSMS");
     }
-
 }

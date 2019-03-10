@@ -1,17 +1,19 @@
-package conraud.sylvain.moodtracker2;
+package conraud.sylvain.moodtracker2.UI;
 
-import android.graphics.Point;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import conraud.sylvain.moodtracker2.Data.Mood;
+import conraud.sylvain.moodtracker2.R;
+import conraud.sylvain.moodtracker2.utils.Save;
 
 
 public class HistoryActivity extends AppCompatActivity {
@@ -27,10 +29,6 @@ public class HistoryActivity extends AppCompatActivity {
         listView.setEnabled(false);
         CustomAdapter customAdapter = new CustomAdapter();
         listView.setAdapter(customAdapter);
-
-
-
-
     }
     class CustomAdapter extends BaseAdapter{
 

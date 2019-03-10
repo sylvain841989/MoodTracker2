@@ -1,4 +1,4 @@
-package conraud.sylvain.moodtracker2;
+package conraud.sylvain.moodtracker2.UI;
 
 import android.Manifest;
 import android.app.AlertDialog;
@@ -17,6 +17,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import conraud.sylvain.moodtracker2.R;
+import conraud.sylvain.moodtracker2.utils.Save;
+
 public class DialogSMS extends DialogFragment {
 
     String num , message;
@@ -25,11 +28,11 @@ public class DialogSMS extends DialogFragment {
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         String [] mood = new String[5];
-        mood[0]="Aujourd'hui je suis vraiment triste";
-        mood[1]="Aujourd'hui je ne suis pas au top";
+        mood[0] = "Aujourd'hui je suis vraiment triste";
+        mood[1] = "Aujourd'hui je ne suis pas au top";
         mood[2] = "Ca pourrait aller mieux mais ça pourrait être pire";
-        mood[3]="Ajourd'hui ca va plutot bien";
-        mood[4]="Aujourd'hui je suis super content";
+        mood[3] = "Ajourd'hui ca va plutot bien";
+        mood[4] = "Aujourd'hui je suis super content";
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         LayoutInflater inflater = getActivity().getLayoutInflater();
@@ -38,7 +41,6 @@ public class DialogSMS extends DialogFragment {
         builder.setTitle("Send Message");
         final EditText editTextMsg =view.findViewById(R.id.dialog_sms_edit_text_message);
         final EditText editTextNum =view.findViewById(R.id.dialog_sms_edit_text_number);
-
 
         if(Save.mCurrentComment == null){
             editTextMsg.setText(mood[Save.mCurrentMood]);
@@ -52,21 +54,14 @@ public class DialogSMS extends DialogFragment {
             public void onClick(DialogInterface dialog, int which) {
                 num = editTextNum.getText().toString();
                 message = editTextMsg.getText().toString();
-                sendSMS();
-
-            }
+                sendSMS(); }
         });
-
         builder.setNegativeButton("Annuler", new DialogInterface.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
-
-            }
+            public void onClick(DialogInterface dialog, int which) { }
         });
 
-
-        return builder.create();
-    }
+        return builder.create(); }
 
     void sendSMS(){
         if(ContextCompat.checkSelfPermission(getContext(), Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED){
@@ -79,11 +74,6 @@ public class DialogSMS extends DialogFragment {
             }
         }else {
             ActivityCompat.requestPermissions(getActivity(),new String[]{Manifest.permission.SEND_SMS},1);
-
         }
-
-
-
     }
-
 }

@@ -1,18 +1,19 @@
-package conraud.sylvain.moodtracker2;
+package conraud.sylvain.moodtracker2.utils;
 
 import android.content.Context;
 import android.media.MediaPlayer;
 
+import conraud.sylvain.moodtracker2.R;
 
 
 public class Audio {
     static   int lastPosition;
     static boolean playOk =true;
-    static void playSound(int position, Context context){
+    public static void playSound(int position, Context context){
 
         if(position != lastPosition && playOk){
             switch (position){
-                case 0:MediaPlayer.create(context,R.raw.very_sad).start();
+                case 0:MediaPlayer.create(context, R.raw.very_sad).start();
                     break;
                 case 1:MediaPlayer.create(context,R.raw.disapointed).start();
                     break;
@@ -32,9 +33,5 @@ public class Audio {
                 }
             },1000);
         }
-
     }
-
-
-
 }
