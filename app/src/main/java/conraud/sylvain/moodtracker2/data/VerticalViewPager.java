@@ -1,4 +1,4 @@
-package conraud.sylvain.moodtracker2.Data;
+package conraud.sylvain.moodtracker2.data;
 
 import android.content.Context;
 import android.support.v4.view.ViewPager;

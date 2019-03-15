@@ -6,9 +6,9 @@ import android.media.MediaPlayer;
 import conraud.sylvain.moodtracker2.R;
 
 
-public class Audio {
-    static   int lastPosition;
-    static boolean playOk =true;
+public abstract class Audio {
+    public static   int lastPosition;
+    public static boolean playOk =true;
     public static void playSound(int position, Context context){
 
         if(position != lastPosition && playOk){

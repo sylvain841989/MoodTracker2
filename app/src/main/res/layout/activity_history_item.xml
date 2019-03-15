@@ -8,29 +8,27 @@
     android:background="@android:color/darker_gray">
 
     <RelativeLayout
-        android:id="@+id/line_history_relative_layout"
-
+        android:id="@+id/activity_history_item"
         android:layout_width="0dp"
         android:layout_height="match_parent">
 
-
-
         <TextView
-            android:id="@+id/line_history_text_view"
+            android:id="@+id/activity_history_item_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="text"
             android:layout_margin="5dp"
-            android:textColor="@android:color/black"
-            />
+            android:textColor="@android:color/black"/>
+
         <ImageView
-            android:id="@+id/line_history_image_view"
+            android:id="@+id/activity_history_item_image_view"
             android:layout_width="@dimen/size_comment_history_width"
             android:layout_height="@dimen/size_comment_history_height"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:src="@drawable/ic_comment_black_48px"
             android:layout_margin="20dp"/>
+
     </RelativeLayout>
-    </RelativeLayout>
+</RelativeLayout>
 

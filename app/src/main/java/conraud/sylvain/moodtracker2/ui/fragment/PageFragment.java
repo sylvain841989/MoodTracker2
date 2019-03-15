@@ -1,4 +1,4 @@
-package conraud.sylvain.moodtracker2.UI;
+package conraud.sylvain.moodtracker2.ui.fragment;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -14,6 +14,8 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import conraud.sylvain.moodtracker2.R;
+import conraud.sylvain.moodtracker2.ui.activity.PieChartActivity;
+import conraud.sylvain.moodtracker2.ui.activity.HistoryActivity;
 import conraud.sylvain.moodtracker2.utils.Save;
 
 
@@ -21,7 +23,7 @@ public class PageFragment extends Fragment {
 
     private static final String KEY_POSITION = "position";
     private static final String KEY_COLOR = "color";
-    public static final String KEY_SMILEY = "smiley";
+    private static final String KEY_SMILEY = "smiley";
 
     public PageFragment() {
         // Required empty public constructor
@@ -61,7 +63,6 @@ public class PageFragment extends Fragment {
             public void onClick(View v) {
                 openDialogComment();
             }});
-
         imageViewPieChart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,8 +77,8 @@ public class PageFragment extends Fragment {
         return result;
     }
 
-    void openActivityHistory()
-    {
+    void openActivityHistory(){
+
         Intent intent = new Intent(getContext(), HistoryActivity.class);
         startActivity(intent);
     }
@@ -103,6 +104,7 @@ public class PageFragment extends Fragment {
         });
         builder.create().show();
     }
+
     void openActivityPieChart(){
         Intent intent = new Intent(getContext(), PieChartActivity.class);
         startActivity(intent);

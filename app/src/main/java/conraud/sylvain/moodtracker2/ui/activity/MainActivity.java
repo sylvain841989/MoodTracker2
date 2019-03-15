@@ -1,4 +1,4 @@
-package conraud.sylvain.moodtracker2.UI;
+package conraud.sylvain.moodtracker2.ui.activity;
 
 
 import android.support.v4.view.ViewPager;
@@ -7,7 +7,7 @@ import android.os.Bundle;
 
 import java.util.Calendar;
 
-import conraud.sylvain.moodtracker2.utils.PageAdapter;
+import conraud.sylvain.moodtracker2.ui.fragment.PageAdapter;
 import conraud.sylvain.moodtracker2.R;
 import conraud.sylvain.moodtracker2.utils.Save;
 

@@ -4,7 +4,7 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#ff00796b</color>
     <!-- Background colors used for the different moods -->
-
+    <color name="grey_pie_chart">#A2B6B4</color>
 
 
     <array name="colorsArray">

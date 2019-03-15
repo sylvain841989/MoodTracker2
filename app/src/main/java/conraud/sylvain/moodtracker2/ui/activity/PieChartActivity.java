@@ -1,4 +1,4 @@
-package conraud.sylvain.moodtracker2.UI;
+package conraud.sylvain.moodtracker2.ui.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,7 +6,7 @@ import android.os.Bundle;
 import java.util.ArrayList;
 import java.util.List;
 
-import conraud.sylvain.moodtracker2.Data.Mood;
+import conraud.sylvain.moodtracker2.data.Mood;
 import conraud.sylvain.moodtracker2.R;
 import conraud.sylvain.moodtracker2.utils.Save;
 import lecho.lib.hellocharts.model.PieChartData;
@@ -25,7 +25,7 @@ public class PieChartActivity extends AppCompatActivity {
         List<SliceValue> piedata = new ArrayList<>();
 
         for (Mood mood : arrayMood){
-            resultMood[mood.mood]+=1;
+            resultMood[mood.getMood()]+=1;
         }
 
         if(resultMood[0] > 0 )

@@ -2,14 +2,15 @@ package conraud.sylvain.moodtracker2.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
 
-import conraud.sylvain.moodtracker2.Data.Mood;
+import conraud.sylvain.moodtracker2.data.Mood;
 
-public abstract class Save extends AppCompatActivity {
+import static android.content.Context.MODE_PRIVATE;
 
-    static String KEY_SAVE_POSITION = "keySavePosition";
-    static String KEY_SAVE_COMMENT = "keySaveComment";
+public abstract class Save{
+
+    public static String KEY_SAVE_POSITION = "keySavePosition";
+    public static String KEY_SAVE_COMMENT = "keySaveComment";
     public static Mood moodArray[] = new Mood[7];
     public static SharedPreferences preferences;
     public static String mCurrentComment;
@@ -50,10 +51,10 @@ public abstract class Save extends AppCompatActivity {
             moodArray[i]= new Mood(comment,mood);
         }
     }
-    static void saveHistory(){
+   public static void saveHistory(){
         for (int i = 0; i<moodArray.length ; i++){
-            preferences.edit().putString("commentHistory"+i, moodArray[i].comment).apply();
-            preferences.edit().putInt("moodHistory"+i, moodArray[i].mood).apply();
+            preferences.edit().putString("commentHistory"+i, moodArray[i].getComment()).apply();
+            preferences.edit().putInt("moodHistory"+i, moodArray[i].getMood()).apply();
 
         }
     }

@@ -1,4 +1,4 @@
-package conraud.sylvain.moodtracker2.UI;
+package conraud.sylvain.moodtracker2.ui.fragment;
 
 import android.Manifest;
 import android.app.AlertDialog;
@@ -22,7 +22,7 @@ import conraud.sylvain.moodtracker2.utils.Save;
 
 public class DialogSMS extends DialogFragment {
 
-    String num , message;
+    private String num , message;
 
     @NonNull
     @Override
@@ -36,7 +36,7 @@ public class DialogSMS extends DialogFragment {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         LayoutInflater inflater = getActivity().getLayoutInflater();
-        View view =inflater.inflate(R.layout.dialog_sms,null);
+        View view =inflater.inflate(R.layout.page_fragment_dialog_sms,null);
         builder.setView(view);
         builder.setTitle("Send Message");
         final EditText editTextMsg =view.findViewById(R.id.dialog_sms_edit_text_message);
@@ -63,7 +63,7 @@ public class DialogSMS extends DialogFragment {
 
         return builder.create(); }
 
-    void sendSMS(){
+    public void sendSMS(){
         if(ContextCompat.checkSelfPermission(getContext(), Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED){
             if(num.length() == 10 && message!=null){
                 SmsManager.getDefault().sendTextMessage(num,null,message,null,null);

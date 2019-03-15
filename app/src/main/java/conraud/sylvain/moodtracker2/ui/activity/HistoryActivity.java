@@ -1,4 +1,4 @@
-package conraud.sylvain.moodtracker2.UI;
+package conraud.sylvain.moodtracker2.ui.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,7 +11,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import conraud.sylvain.moodtracker2.Data.Mood;
+import conraud.sylvain.moodtracker2.data.Mood;
 import conraud.sylvain.moodtracker2.R;
 import conraud.sylvain.moodtracker2.utils.Save;
 
@@ -49,16 +49,16 @@ public class HistoryActivity extends AppCompatActivity {
 
         @Override
         public View getView(final int position, View convertView, ViewGroup parent) {
-            convertView = getLayoutInflater().inflate(R.layout.line_history,null);
+            convertView = getLayoutInflater().inflate(R.layout.activity_history_item,null);
             int[] colors = getResources().getIntArray(R.array.colorsArray);
 
 
-            RelativeLayout relativeLayout = convertView.findViewById(R.id.line_history_relative_layout);
-            TextView textView = convertView.findViewById(R.id.line_history_text_view);
-            ImageView imageView = convertView.findViewById(R.id.line_history_image_view);
+            RelativeLayout relativeLayout = convertView.findViewById(R.id.activity_history_item);
+            TextView textView = convertView.findViewById(R.id.activity_history_item_text_view);
+            ImageView imageView = convertView.findViewById(R.id.activity_history_item_image_view);
 
-            relativeLayout.setBackgroundColor(colors[moodArray[position].mood]);
-            if(moodArray[position].comment == null)
+            relativeLayout.setBackgroundColor(colors[moodArray[position].getMood()]);
+            if(moodArray[position].getComment() == null)
                 imageView.setVisibility(View.INVISIBLE);
 
             int height = parent.getMeasuredHeight();
@@ -66,14 +66,14 @@ public class HistoryActivity extends AppCompatActivity {
             RelativeLayout.LayoutParams layoutParams;
 
             layoutParams = (RelativeLayout.LayoutParams) relativeLayout.getLayoutParams();
-            layoutParams.width = ((moodArray[position].mood*15)+40)*width;
+            layoutParams.width = ((moodArray[position].getMood()*15)+40)*width;
             layoutParams.height=height/7;
             relativeLayout.setLayoutParams(layoutParams);
 
             imageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(HistoryActivity.this, moodArray[position].comment,Toast.LENGTH_SHORT).show();
+                    Toast.makeText(HistoryActivity.this, moodArray[position].getComment(),Toast.LENGTH_SHORT).show();
                 }
             });
 
